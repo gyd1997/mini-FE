@@ -3,7 +3,7 @@ Function.prototype.feApply = function (thisArg, args) {
   var fn = this
 
   // 2.处理绑定的thisArg
-  thisArg = thisArg ? Object(thisArg) : window
+  thisArg = thisArg !== null || thisArg !== undefined ? Object(thisArg) : window
 
   // 3.执行函数
   thisArg.fn = fn
@@ -16,6 +16,7 @@ Function.prototype.feApply = function (thisArg, args) {
   return result
 }
 
+// 测试用例
 function foo() {
   console.log('foo执行', this)
 }

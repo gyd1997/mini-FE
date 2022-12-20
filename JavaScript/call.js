@@ -3,7 +3,7 @@ Function.prototype.feCall = function (thisArg, ...args) {
   var fn = this
 
   // 2.将 thisArg 转成对象类型（为了对基本类型进行装箱转换）
-  thisArg = thisArg ? Object(thisArg) : window
+  thisArg = thisArg !== null || thisArg !== undefined ? Object(thisArg) : window
 
   // 3.调用需要被执行的函数
   thisArg.fn = fn
@@ -14,6 +14,7 @@ Function.prototype.feCall = function (thisArg, ...args) {
   return result
 }
 
+// 测试用例
 function foo() {
   console.log('foo执行', this)
 }
