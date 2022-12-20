@@ -1,4 +1,4 @@
-Function.prototype.feBind = function (thisArg, args) {
+Function.prototype.feBind = function (thisArg, ...args) {
   // 1.获取被调用的函数
   var fn = this
 
